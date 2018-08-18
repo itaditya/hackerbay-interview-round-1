@@ -4,10 +4,10 @@
  */
 
 const thumbnailValidator = (body) => {
-  if(!body) {
+  if (!body) {
     return false
   }
-  
+
   const { imageUrl } = body
   if (!imageUrl) {
     return false

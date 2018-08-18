@@ -22,7 +22,7 @@ const patchHandler = (req, res) => {
       message: 'success',
       data: patchedData
     })
-  } catch(error) {
+  } catch (error) {
     res.statusCode = 400
     return res.json({
       message: 'patch is incorrect'

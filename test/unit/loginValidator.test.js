@@ -1,9 +1,9 @@
-const loginValidator = require('../../validators/login');
+const loginValidator = require('../../validators/login')
 
 describe('that loginValidator works correctly', () => {
   it('checks if body is not defined', () => {
     const isValid = loginValidator(undefined)
-    expect(isValid).toBe(false);
+    expect(isValid).toBe(false)
   })
 
   it('checks if username is not present', () => {
@@ -11,7 +11,7 @@ describe('that loginValidator works correctly', () => {
       password: 'xxxxxxx'
     }
     const isValid = loginValidator(body)
-    expect(isValid).toBe(false);
+    expect(isValid).toBe(false)
   })
 
   it('checks if password is not present', () => {
@@ -19,13 +19,13 @@ describe('that loginValidator works correctly', () => {
       username: 'xxxxxxx'
     }
     const isValid = loginValidator(body)
-    expect(isValid).toBe(false);
+    expect(isValid).toBe(false)
   })
 
   it('checks if body is empty', () => {
     const body = {}
     const isValid = loginValidator(body)
-    expect(isValid).toBe(false);
+    expect(isValid).toBe(false)
   })
 
   it('checks if username and password are provided', () => {
@@ -34,6 +34,6 @@ describe('that loginValidator works correctly', () => {
       password: 'xxxxxxx'
     }
     const isValid = loginValidator(body)
-    expect(isValid).toBe(true);
+    expect(isValid).toBe(true)
   })
 })
