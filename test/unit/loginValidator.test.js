@@ -27,4 +27,13 @@ describe('that loginValidator works correctly', () => {
     const isValid = loginValidator(body)
     expect(isValid).toBe(false);
   })
+
+  it('checks if username and password are provided', () => {
+    const body = {
+      username: 'xxxxxxx',
+      password: 'xxxxxxx'
+    }
+    const isValid = loginValidator(body)
+    expect(isValid).toBe(true);
+  })
 })

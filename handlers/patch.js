@@ -16,11 +16,18 @@ const patchHandler = (req, res) => {
     })
   }
   const { body: { data, patch } } = req
-  const patchedData = applyPatch(data, patch).newDocument
-  res.json({
-    message: 'success',
-    data: patchedData
-  })
+  try {
+    const patchedData = applyPatch(data, patch, true).newDocument
+    res.json({
+      message: 'success',
+      data: patchedData
+    })
+  } catch(error) {
+    res.statusCode = 400
+    return res.json({
+      message: 'patch is incorrect'
+    })
+  }
 }
 
 module.exports = patchHandler

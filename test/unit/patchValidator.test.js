@@ -27,4 +27,17 @@ describe('that patchValidator works correctly', () => {
     const isValid = patchValidator(body)
     expect(isValid).toBe(false);
   })
+
+  it('checks if data and patch are provided', () => {
+    const body = {
+      data: {
+        firstName: 'foo'
+      },
+      patch: [
+        { "op": "replace", "path": "/firstName", "value": "bar" },
+      ]
+    }
+    const isValid = patchValidator(body)
+    expect(isValid).toBe(true);
+  })
 })
