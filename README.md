@@ -2,16 +2,16 @@
 
 1. Follow industry standards and conventions.
 1. Be consistent.
-1. Modular code.
-1. Set correct Status Codes.
+1. Write modular code.
+1. Set correct status codes.
 1. All server responses should have same structure.
 
 ## Conventions
-Apart from following the linting rules of standard, I follow some other conventions also.
+Apart from the linting rules of standard, I follow some other conventions too.
 
 1. First require external dependencies.
 1. After one line space require internal dependencies.
-1. The order of requiring is internal dependencies is also same (routes then middlewares then handlers).
+1. The order of requiring internal dependencies is also same (routes then middlewares then handlers then validators then utils).
 1. The name of the module should inform what type of module it is (middleware, handler, etc.)
 1. Only use anonymous function when function body is single line (like a lambda expression)
 
