@@ -1,8 +1,13 @@
 const log = require('../utils/log')
 
-const logger = (req, res, next) => {
+/**
+ * Middleware that logs incoming requests.
+ * @module middleware/loggerMw
+ */
+
+const loggerMw = (req, res, next) => {
   log.info({ req })
   next()
 }
 
-module.exports = logger
+module.exports = loggerMw

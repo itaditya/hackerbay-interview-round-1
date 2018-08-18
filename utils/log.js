@@ -8,6 +8,11 @@ const reqSerializer = (req) => {
   }
 }
 
+/**
+ * Utility for logging
+ * @module utils/log
+ */
+
 const log = bunyan.createLogger({
   name: 'microservice-1',
   serializers: {

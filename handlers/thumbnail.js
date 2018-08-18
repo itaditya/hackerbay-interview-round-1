@@ -3,6 +3,11 @@ const Jimp = require('jimp')
 const thumbnailValidator = require('../validators/thumbnail')
 const log = require('../utils/log')
 
+/**
+ * Handles request to /protected/thumbnail route
+ * @module handler/thumbnail
+ */
+
 const thumbnailHandler = async (req, res) => {
   const isValid = thumbnailValidator(req.body)
   if (!isValid) {

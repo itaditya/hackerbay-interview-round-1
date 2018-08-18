@@ -2,6 +2,11 @@ const jwt = require('jsonwebtoken')
 
 const loginValidator = require('../validators/login')
 
+/**
+ * Handles request to /login route
+ * @module handler/login
+ */
+
 const loginHandler = (req, res) => {
   const isValid = loginValidator(req.body)
 

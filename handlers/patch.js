@@ -2,6 +2,11 @@ const { applyPatch } = require('fast-json-patch')
 
 const patchValidator = require('../validators/patch')
 
+/**
+ * Handles request to /protected/patch route
+ * @module handler/patch
+ */
+
 const patchHandler = (req, res) => {
   const isValid = patchValidator(req.body)
   if (!isValid) {

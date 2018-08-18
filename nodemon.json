@@ -1,0 +1,10 @@
+{
+  "watch": [
+    "handlers",
+    "middlewares",
+    "utils",
+    "validators",
+    "index.js",
+    "protectedRoutes.js"
+  ]
+}

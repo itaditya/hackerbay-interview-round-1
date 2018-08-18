@@ -1,3 +1,12 @@
+# HackerBay Interview Backend Task
+
+## How to run project
+1. Clone this repo and `cd` into it.
+1. Run `npm install` to install all the dependencies.
+1. Run `npm start` to start the microservice server.
+
+**Note** - For development use `npm run dev` as it runs the server in watch mode and has formatted logs. To see other commands enter `npm run`.
+
 ## Main Focus
 
 1. Follow industry standards and conventions.
@@ -21,3 +30,10 @@ Apart from the linting rules of standard, I follow some other conventions too.
 1. Used standard javascript style because I checked some code on [this](https://github.com/hackerbay/lighthouse-tests/blob/lighthouse-ci/test/lightHouse.test.js) hackerbay repo. There were no semi-colons so I guessed it was standard javascript style.
 1. Used polka for web server because it has very small footprint and faster performance. Ideal for a microservice.
 1. Used fast-json-patch because the benchmarks suggests it is faster than others.
+
+## Eligible for Bonus points
+
+* [x] Extra Documentation
+* [x] Include JSdoc comments and/or Swagger specifications to impress us.
+* [x] Logging / Monitoring
+* [x] Integrate a centralized app logging/monitoring system.

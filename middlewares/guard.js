@@ -2,24 +2,12 @@ const jwt = require('jsonwebtoken')
 
 const log = require('../utils/log')
 
-const extractToken = (req) => {
-  const authHeader = req.headers.authorization
-  if (!authHeader) {
-    return
-  }
-  const authData = authHeader.split(' ')
-  if (authData.length < 2) {
-    return
-  }
-  const token = authData[1]
-  if (!token) {
-    return
-  }
+/**
+ * Middleware that stops request if valid jwt token not provided
+ * @module middleware/guardMw
+ */
 
-  return token
-}
-
-const guard = (req, res, next) => {
+const guardMw = (req, res, next) => {
   const token = extractToken(req)
   if (!token) {
     log.info({ req }, 'Denied Unauthorized Access')
@@ -44,4 +32,21 @@ const guard = (req, res, next) => {
   }
 }
 
-module.exports = guard
+const extractToken = (req) => {
+  const authHeader = req.headers.authorization
+  if (!authHeader) {
+    return
+  }
+  const authData = authHeader.split(' ')
+  if (authData.length < 2) {
+    return
+  }
+  const token = authData[1]
+  if (!token) {
+    return
+  }
+
+  return token
+}
+
+module.exports = guardMw
