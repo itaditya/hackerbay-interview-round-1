@@ -1,10 +1,14 @@
-const thumbnailHandler = (req, res) => {
-  res.json({
-    message: 'success',
-    data: {
-      hi: 'b'
-    }
-  })
+const thumbnailValidator = (body) => {
+  const { imageUrl } = body
+  if (!imageUrl) {
+    return false
+  }
+
+  if (!(imageUrl.startsWith('http://') || imageUrl.startsWith('https://'))) {
+    return false
+  }
+
+  return true
 }
 
-module.exports = thumbnailHandler
+module.exports = thumbnailValidator

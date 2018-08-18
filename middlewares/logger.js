@@ -1,5 +1,7 @@
+const log = require('../utils/log')
+
 const logger = (req, res, next) => {
-  console.log(`-> ${req.method} ${req.url}`)
+  log.info({ req })
   next()
 }
 

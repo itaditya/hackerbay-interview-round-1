@@ -12,7 +12,7 @@ const app = polka()
 app.use(json(), jsonSendMw, loggerMw)
 app.use('/protected', protectedRoutes)
 
-app.get('/', (req, res) => res.json({ message: 'server running'}))
+app.get('/', (req, res) => res.json({ message: 'server running' }))
 app.post('/login', loginHandler)
 
 app.listen(5000).then(() => console.log(`> Running on http://localhost:5000`))

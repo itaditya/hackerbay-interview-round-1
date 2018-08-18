@@ -1,5 +1,7 @@
 const jwt = require('jsonwebtoken')
 
+const log = require('../utils/log')
+
 const extractToken = (req) => {
   const authHeader = req.headers.authorization
   if (!authHeader) {
@@ -20,7 +22,7 @@ const extractToken = (req) => {
 const guard = (req, res, next) => {
   const token = extractToken(req)
   if (!token) {
-    console.log('Denied Unauthorized Access')
+    log.info({ req }, 'Denied Unauthorized Access')
     res.statusCode = 401
     return res.json({
       message: 'authentication header not present'
@@ -33,7 +35,8 @@ const guard = (req, res, next) => {
     jwt.verify(token, jwtSecret)
     next()
   } catch (error) {
-    console.log('error', error)
+    log.info('Denied Unauthorized Access')
+    log.warn(error)
     res.statusCode = 401
     return res.json({
       message: 'jwt data is invalid'
